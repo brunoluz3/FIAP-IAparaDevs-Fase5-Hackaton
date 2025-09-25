@@ -91,6 +91,9 @@ def generate_report (image_path, current_solution, improvement):
     page.paragraphs.add(ap.text.TextFragment("")) 
     page.paragraphs.add(ap.text.TextFragment("")) 
 
+    image_position = ap.Rectangle(500, 100, 150, 1200, True)
+    page.add_image(image_path, image_position)
+
     current_solution_title = ap.text.TextFragment("Análise completa da solução atual")
     current_solution_title.text_state.font_style = ap.text.FontStyles.BOLD
     current_solution_title.position = ap.text.Position(90, 450)
@@ -107,10 +110,7 @@ def generate_report (image_path, current_solution, improvement):
     page.paragraphs.add(ap.text.TextFragment(improvement)) 
     page.paragraphs.add(ap.text.TextFragment(""))  
     page.paragraphs.add(ap.text.TextFragment(""))  
-
-    image_position = ap.Rectangle(500, 100, 150, 1200, True)
-    page.add_image(image_path, image_position)
-   
+ 
     pdf = "report/" + file_name + ".pdf"
     
     document.save(pdf)
