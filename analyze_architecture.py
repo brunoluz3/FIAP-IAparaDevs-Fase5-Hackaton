@@ -108,17 +108,6 @@ def generate_report (image_path, current_solution, improvement):
     page.paragraphs.add(ap.text.TextFragment(""))  
     page.paragraphs.add(ap.text.TextFragment(""))  
 
-    # image_title = ap.text.TextFragment("Desenho da solução")
-    # image_title.text_state.font_style = ap.text.FontStyles.BOLD
-    # page.paragraphs.add(image_title)
-    # image = ap.ImageStamp(image_path)
-    # image.height = 300 
-    # image.width = 300 
-    # image.x_indent = 150 
-    # image.y_indent = 490  
-   
-    # page.add_stamp(image)
-
     image_position = ap.Rectangle(500, 100, 150, 1200, True)
     page.add_image(image_path, image_position)
    
