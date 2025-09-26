@@ -16,7 +16,7 @@ def analyze_image(image_path):
     base_64_img = encode_image(image_path)
 
     command = """Você é um arquiteto de software, analise a imagem identificando qual é a cloud que está
-    sendo usada (aws, google cloud ou azure), separa cada um os itens do desenho e identifique qual é o tipo de
+    sendo usada (aws, google cloud ou azure), separe cada um os itens do desenho e identifique qual é o tipo de
     solução e como ela interage entre todos os componentes do desenho
     
     Sua resposta de ser no seguinte formato:
@@ -25,9 +25,8 @@ def analyze_image(image_path):
     Lista com os componentes:
     Interação entre os componentes:
     O que esse sistema faz:
-    Vulnerabilidades e Solução para cara vulnerabilidade:
-    
-    Gere um Relatório de Modelagem de Ameaças, baseado na metodologia STRIDE
+    Vulnerabilidades e Solução para cara vulnerabilidade:    
+    Gere um Relatório de Modelagem de Ameaças, baseado na metodologia STRIDE:
 
     """
 
@@ -53,8 +52,8 @@ def solve_vulnerabilities(image_path):
     
     command = """
             Você é um especialista em arquitetura de software, com base no levantamento da solução abaixo, você deve 
-            montar um diagrama marmeid com a descrição dos componente, como eles se relacionam e as correções dos pontos
-            de vulnerabilidades           
+            gerar um diagrama marmeid com a descrição dos componente, como eles se relacionam e as correções dos pontos
+            de vulnerabilidades, além disso, deve gerar um script terraform para a criação da solução           
      """   
 
     current_solution = analyze_image(image_path)
@@ -115,7 +114,11 @@ def generate_report (image_path, current_solution, improvement):
     
     document.save(pdf)
 
+    return pdf
 
-solve_vulnerabilities("imagem\Arquitetura2.jpg")
+
+solve_vulnerabilities("imagem\Cloud_aws.jpg")
+
+# solve_vulnerabilities("imagem\Cloud_azure.jpg")
 
 # generate_report("imagem\Arquitetura2.jpg", "teste", "melhoria")
