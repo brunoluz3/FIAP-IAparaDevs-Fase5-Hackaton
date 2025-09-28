@@ -33,15 +33,18 @@ A IA-STRIDE é uma ferramenta desenvolvida em Python que utiliza inteligência a
 
 ## 4. Arquivos
 
+- **diretório rag**: Contém os arquivos usados para fazer o processo de RAG com a documentação do STRIDE, onde geramos os chunk e criamos o vector database que é usado no processo.
 
+- **main.py**: É o arquivo que expôem a aplicação como um serviço utilizando a lib FastAPI.
 
-- **requirements.txt**: Documento que descreve todas as libs e verões usadas no projeto
+- **analyze_architecture.py**: É o arquivos responsável por fazer o uso da LLM do openAI como motor para o tratamento de todo o processo.
+
+- **requirements.txt**: Documento que descreve todas as libs e verões usadas no projeto.
 
 ## 5. Como usar
 - Instalação: Instale as dependências com o seguinte comando, utilizando o arquivo requirements.txt:
 
 ```<bash>
-
 pip install -r requirements.txt
 Use o código com cuidado.
 ```
