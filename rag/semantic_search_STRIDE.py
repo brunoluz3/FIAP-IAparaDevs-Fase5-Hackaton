@@ -23,4 +23,5 @@ def semantic_search(database: Chroma, content):
     for data in search_results:
         results.append(data[0].page_content)
     
+    print(results)
     return "\n\n----\n\n".join(results)

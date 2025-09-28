@@ -52,7 +52,7 @@ def solve_vulnerabilities(image_path):
     
     command = """
             Você é um especialista em arquitetura de software, com base no levantamento da solução abaixo, você deve 
-            gerar um diagrama marmeid com a descrição dos componente, como eles se relacionam e as correções dos pontos
+            gerar um diagrama mermaid com a descrição dos componente, como eles se relacionam e as correções dos pontos
             de vulnerabilidades, além disso, deve gerar um script terraform para a criação da solução           
      """   
 
@@ -73,7 +73,7 @@ def solve_vulnerabilities(image_path):
     improvement = response.choices[0].message.content
 
     print(improvement)
-    generate_report(image_path, current_solution, improvement)
+    return generate_report(image_path, current_solution, improvement)
 
 def generate_report (image_path, current_solution, improvement):
     complete_file_name = os.path.basename(image_path)
@@ -117,7 +117,7 @@ def generate_report (image_path, current_solution, improvement):
     return pdf
 
 
-solve_vulnerabilities("imagem\Cloud_aws.jpg")
+# solve_vulnerabilities("imagem\Cloud_aws.jpg")
 
 # solve_vulnerabilities("imagem\Cloud_azure.jpg")
 
