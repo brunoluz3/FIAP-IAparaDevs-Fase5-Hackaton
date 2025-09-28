@@ -35,6 +35,8 @@ A IA-STRIDE é uma ferramenta desenvolvida em Python que utiliza inteligência a
 
 - **diretório rag**: Contém os arquivos usados para fazer o processo de RAG com a documentação do STRIDE, onde geramos os chunk e criamos o vector database que é usado no processo.
 
+- **diretório vector_STRIDE_database**: É o diretório onde fica armazenada a base vetorizada criada com Chroma para armazenar os chunck da documentação do STRIDE
+
 - **main.py**: É o arquivo que expôem a aplicação como um serviço utilizando a lib FastAPI.
 
 - **analyze_architecture.py**: É o arquivos responsável por fazer o uso da LLM do openAI como motor para o tratamento de todo o processo.
@@ -53,6 +55,6 @@ Use o código com cuidado.
 
 - Execução: Inicie o servidor FastAPI (ou a CLI, dependendo da interface implementada) para começar a análise.
 
-- Saídas Geradas
-    - Relatório PDF: Um documento detalhado com a análise de segurança da arquitetura, um diagrama Mermaid e o código Terraformpara provisionar a infraestrutura em um provedor de nuvem de sua escolha.
+- Saída Gerada:
+    - Relatório PDF contendo o detalhamento com a análise de segurança da arquitetura, um diagrama Mermaid e o código Terraform para provisionar a infraestrutura em um provedor de nuvem de sua escolha.
 

@@ -8,10 +8,17 @@ import os
 load_dotenv()
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
+"""
+    Metodo responsável por fazer a transformação da imagem em um base64
+"""
 def encode_image(image_path):
     with open(image_path, 'rb' ) as img:
         return base64.b64encode(img.read()).decode('utf-8')
-    
+
+"""
+    Esse metódo é responsável por fazer a análise da imagem, nele temos a prompt inical que será repassado para a pesquisa semantica da nossa
+    base vetorizada que fara a consulta sobre o metodo STRIDE e fará a integracao do a openAI para gerar o relatório de vulnerabilidades
+"""    
 def analyze_image(image_path):    
     base_64_img = encode_image(image_path)
 
@@ -47,7 +54,10 @@ def analyze_image(image_path):
     print(response.choices[0].message.content)
     return response.choices[0].message.content
 
-
+"""
+    Esse metódo é responsável por fazer uma analise complementar, com base no relatório fazemos uma nova consulta na openAI para gerar um
+    diagrama mermaid e o terraform para o provisionamento da infra estrutura com as correções sugeridar na consulta inicil
+"""
 def solve_vulnerabilities(image_path):
     
     command = """
@@ -75,6 +85,10 @@ def solve_vulnerabilities(image_path):
     print(improvement)
     return generate_report(image_path, current_solution, improvement)
 
+"""
+    Esse metódo é responsável por receber todos os dado geramos pela IA e criar o report com as informações da analise de vulnerabilidade
+    detalhada, o diagrama mermaid e o terraform para o provisionamento da infra estrutura 
+"""
 def generate_report (image_path, current_solution, improvement):
     complete_file_name = os.path.basename(image_path)
     file_name, _ = os.path.splitext(complete_file_name)
@@ -115,10 +129,3 @@ def generate_report (image_path, current_solution, improvement):
     document.save(pdf)
 
     return pdf
-
-
-# solve_vulnerabilities("imagem\Cloud_aws.jpg")
-
-# solve_vulnerabilities("imagem\Cloud_azure.jpg")
-
-# generate_report("imagem\Arquitetura2.jpg", "teste", "melhoria")
