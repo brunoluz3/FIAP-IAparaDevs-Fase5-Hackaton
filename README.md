@@ -21,28 +21,30 @@ A IA-STRIDE é uma ferramenta desenvolvida em Python que utiliza inteligência a
 ## 3. Fluxo de Execução
 - Entrada do Desenho de Arquitetura: A IA-STRIDE aceita um desenho de arquitetura em formato de imagem ou texto (dependendo da implementação). A IA interpreta a estrutura, componentes e fluxos de dados do desenho.
 
-    - 1. Análise de Vulnerabilidade (STRIDE): Com base na interpretação da arquitetura, a IA aplica a metodologia STRIDE para identificar ameaças potenciais em cada componente e interação.
+     - Análise de Vulnerabilidade (STRIDE): Com base na interpretação da arquitetura, a IA aplica a metodologia STRIDE para identificar ameaças potenciais em cada componente e interação.
 
-    - 2. Sugestão de Correções: Após a análise, a ferramenta sugere correções específicas para mitigar as vulnerabilidades encontradas.
+     - Sugestão de Correções: Após a análise, a ferramenta sugere correções específicas para mitigar as vulnerabilidades encontradas.
 
-    - 3. Geração do Relatório PDF: Um relatório completo é gerado em formato PDF, contendo a análise, as vulnerabilidades identificadas e as correções propostas.
+     - Geração do Relatório PDF: Um relatório completo é gerado em formato PDF, contendo a análise, as vulnerabilidades identificadas e as correções propostas.
 
-    - 4. Criação do Diagrama Mermaid: Um novo diagrama, formatado em Mermaid, é criado para refletir a arquitetura com as correções sugeridas, facilitando a visualização e documentação.
+     - Criação do Diagrama Mermaid: Um novo diagrama, formatado em Mermaid, é criado para refletir a arquitetura com as correções sugeridas, facilitando a visualização e documentação.
 
-    - 5. Geração do Terraform: O código Terraform é gerado automaticamente, permitindo a criação e o gerenciamento da infraestrutura corrigida em qualquer provedor de nuvem.
+     - Geração do Terraform: O código Terraform é gerado automaticamente, permitindo a criação e o gerenciamento da infraestrutura corrigida em qualquer provedor de nuvem.
 
-## Arquivos
+## 4. Arquivos
 
 
 
 - **requirements.txt**: Documento que descreve todas as libs e verões usadas no projeto
 
-## Como usar
+## 5. Como usar
 - Instalação: Instale as dependências com o seguinte comando, utilizando o arquivo requirements.txt:
 
-\`\`\` bash
+```<bash>
+
 pip install -r requirements.txt
-Use o código com cuidado.\`\`\`
+Use o código com cuidado.
+```
 
 - Configuração: Configure as variáveis de ambiente necessárias em um arquivo .env (chaves de API, etc.).
 
