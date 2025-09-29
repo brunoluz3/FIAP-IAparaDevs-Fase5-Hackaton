@@ -2,11 +2,10 @@
 Autores: Bruno Luz e Diogo Leal
 Conteúdo do trabalho de encerramento da quinta fase do curso de IA para Devs, Hackaton.
 
-A IA-STRIDE é uma IA desenvolvida em Python que utiliza 
-para analisar diagramas de arquitetura de software, independentemente 
-do provedor de nuvem. Ela realiza uma análise de vulnerabilidades baseada 
-na metodologia STRIDE, sugere correções e, ao final, gera um relatório 
-detalhado em PDF.
+A IA-STRIDE é uma IA desenvolvida em Python para analisar diagramas de arquitetura de 
+software, independentemente do provedor de nuvem. Ela realiza uma análise de 
+vulnerabilidades baseada na metodologia STRIDE, sugere correções e, ao final, 
+gera um relatório detalhado em PDF.
 """
 
 
